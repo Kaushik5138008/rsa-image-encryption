@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interceptor</title>
+    <style>
+        img {
+            max-width: 500px; 
+            height: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="interceptor-page">
+    <div class="interceptor-container">
+    <h1>Interceptor</h1>
+    <p>Current Channel Key: <strong>{{ channel_key }}</strong></p>  <!-- Display channel key -->
+    {% if encrypted_image_paths %}
+        <h2>Encrypted Images</h2>
+        {% for path in encrypted_image_paths %}
+            <div>
+                <img src="{{ url_for('static', filename=path) }}" alt="Encrypted Image">
+                <p>
+                    <div class="role-card">
+                        <form method="POST">
+                            <a href="{{ url_for('static', filename=path) }}" download>Download Encrypted Image {{ loop.index }}</a>
+                        </form>
+                    </div>
+                </p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Waiting for the sender to upload encrypted images...</p>
+    {% endif %}
+</body>
+</html>

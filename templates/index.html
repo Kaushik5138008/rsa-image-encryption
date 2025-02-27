@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RSA Image Encryption</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="welcome-page">
+    <div class="container welcome-container">
+    <h1>Welcome to the RSA Image Encryption Portal</h1>
+    <div class="role-card">
+    <h2>Create a Channel</h2>
+    <p>Creates a new channel</p>
+    <a href="{{ url_for('create_channel') }}">Create</a>
+    </div>
+    <div class="role-card">
+        <h2>Join a Channel</h2>
+        <p>Joins an existing channel</p>
+        <a href="{{ url_for('join_channel') }}">Join</a>
+        </div>
+    </div>
+</body>
+</html>

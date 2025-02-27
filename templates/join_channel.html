@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join Channel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="join-channel-page">
+    <div class="container join-channel-container">
+    <h1>Join a Channel</h1>
+    <form method="POST">
+        <label for="channel_key">Enter Channel Key:</label>
+        <input type="text" name="channel_key" required>
+        <div class="role-card">
+            <form method="POST">
+                <button type="submit">Join Channel</button>
+            </form>
+        </div>
+    </form>
+</div>
+</body>
+</html>

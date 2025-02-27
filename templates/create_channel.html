@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Channel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="create-channel-page">
+    <div class="container create-channel-container">
+    <h1>Create a Channel</h1>
+    <div class="role-card">
+    <form method="POST">
+        <p>Generates a Unique Channel Key</p>
+        <button type="submit">Generate Channel Key</button>
+    </form>
+</div>
+    {% if session['channel_key'] %}
+        <p>Your Channel Key: <strong>{{ session['channel_key'] }}</strong></p>
+        <a href="{{ url_for('choose_role', channel_key=session['channel_key']) }}">Proceed to Role Selection</a>
+    {% endif %}
+    <div>
+</body>
+</html>

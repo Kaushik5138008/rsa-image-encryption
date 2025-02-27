@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Role</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="choose-role-page">
+    <div class="container choose-role-container">
+        <h1>Choose Your Role</h1>
+        <form method="POST" id="role-form">
+            <div class="role-card" onclick="selectRole('sender')">
+                <input type="radio" name="role" value="sender" id="sender" required>
+                <label for="sender">Sender</label>
+                <p>Sends the original image</p>
+            </div>
+            <div class="role-card" onclick="selectRole('interceptor')">
+                <input type="radio" name="role" value="interceptor" id="interceptor">
+                <label for="interceptor">Interceptor</label>
+                <p>Tries to access the encrypted image</p>
+            </div>
+            <div class="role-card" onclick="selectRole('receiver')">
+                <input type="radio" name="role" value="receiver" id="receiver">
+                <label for="receiver">Receiver</label>
+                <p>Receives the decrypted image</p>
+            </div>
+            <button type="submit">Confirm Role</button>
+        </form>
+    </div>
+
+    <script>
+        function selectRole(role) {
+            document.getElementById(role).checked = true;
+        }
+    </script>
+</body>
+</html>
