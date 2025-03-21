@@ -102,11 +102,10 @@ Open your browser and go to:
 📌 **Flask** – Web framework  
 📌 **Flask-SocketIO** – Real-time WebSocket communication  
 📌 **Pillow** – Image processing  
-📌 **PyCryptodome** – RSA encryption library  
 
 To install:
 ```sh
-pip install Flask Flask-SocketIO Pillow pycryptodome
+pip install Flask Flask-SocketIO Pillow
 ```
 
 ---
